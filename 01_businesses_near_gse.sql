@@ -11,4 +11,7 @@
   The latter should be used if getting distances for ORDER BY.
 */
 
-select ...
+select * from phl_business_licenses
+where opa_owner not like 'TRUSTEES OF %'
+order by the_geom <-> st_makepoint(-75.1972, 39.9533)
+limit 5
